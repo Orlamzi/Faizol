@@ -3,7 +3,11 @@ body{
     background: url(student.jpeg) no-repeat;
     background-size: cover;
     height: 100vh;
-    padding: 5vh;
+    padding: 5vh 0 0 0; /* Only top padding for spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 body::before{
     content: '';
@@ -22,13 +26,17 @@ body::before{
 .container{
     position: relative;
     background: white;
-    width: 50vw;
-    height: 34vh;
+    width: 100%;
+    max-width: 420px;
+    min-width: 280px;
+    margin: 0 auto;
+    height: auto;
     justify-self: center;
     z-index: 1;
     padding: 35px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-shadow: 0px 0px 30px 0px black;
+    border-radius: 12px;
 }
 #theme-change{
     background: black;
@@ -102,8 +110,8 @@ small{
     flex-direction: row;
 }
 .checkbox{
-    width: 1.5vw;
-    height: 1.5vh;
+    width: 22px;
+    height: 22px;
 }
 label{
     margin-top: 5px;
@@ -148,26 +156,122 @@ body.dark-theme .visible-field{
 }
 
 /* MEDIA QUERIES... */
-@media screen and(max-width: 480px) {
-    body{
-        margin: 0;
-        padding: 2vh;
-        height: 100vh;
-    }
-    .container{
-        position: relative;
-        width: 50vw;
-        height: 27vh;
+@media (max-width: 768px) {
+    .container {
+        width: 95vw;
+        max-width: 95vw;
+        min-width: unset;
         padding: 20px;
     }
-    #theme-change{
-        color: white;
+    .checkbox {
+        width: 20px;
+        height: 20px;
+    }
+    #theme-change {
+        width: 80px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .microsoft-p {
+        font-size: 25px;
+    }
+    .sign-in {
+        font-size: 18px;
+    }
+    img {
+        width: 8vw;
+        height: 8vh;
+    }
+    .by {
+        margin-left: 0;
+    }
+    #forgot-password {
+        margin-left: 0;
+        float: none;
+        display: block;
+        text-align: right;
+    }
+    #next-btn {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 15px;
+        margin-top: 20px;
+        float: none;
+        display: block;
+        box-sizing: border-box;
+    }
+    #login-btn {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 15px;
+        margin-top: 20px;
+        float: none;
+        display: block;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 0;
+        padding: 10px;
+        height: 100%;
+    }
+    .container {
+        width: 88vw;
+        max-width: 98vw;
+        min-width: unset;
+        padding: 10px;
+    }
+    .checkbox {
+        width: 18px;
+        height: 18px;
+    }
+    #theme-change {
         width: 40px;
         height: 20px;
-        border-radius: 50px;
-        font-weight: bold;
-        font-size: 15px;
-        cursor: pointer;
-        background: yellow;
+        font-size: 12px;
+    }
+    .microsoft-p {
+        font-size: 18px;
+    }
+    .sign-in {
+        font-size: 14px;
+    }
+    img {
+        width: 15vw;
+        height: 6vh;
+    }
+    .by {
+        margin-left: 0;
+        font-size: 12px;
+    }
+    .last-part {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #forgot-password {
+        margin-left: 0;
+        float: none;
+        display: block;
+        text-align: right;
+    }
+    #next-btn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 13px;
+        margin-top: 15px;
+        float: none;
+        display: block;
+        box-sizing: border-box;
+    }
+    #login-btn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 13px;
+        margin-top: 15px;
+        float: none;
+        display: block;
+        box-sizing: border-box;
     }
 }
