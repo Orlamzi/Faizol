@@ -63,13 +63,10 @@ img{
 .sign-in{
     font-size: 23px;
 }
-input{
-    font-size: 17px;
-    letter-spacing: 2px;
-    background: transparent;
-    border: none;
+label{
+    color: gray;
 }
-.visible-field{
+#visible-field{
     box-shadow: 0px 0px 0px 1px grey;
     height: 3vh;
     width: 100%;
@@ -151,7 +148,7 @@ body.dark-theme .container{
 body.dark-theme #theme-change{
     background: red;
 }
-body.dark-theme .visible-field{
+body.dark-theme #visible-field{
     color: white;
 }
 
@@ -214,64 +211,102 @@ body.dark-theme .visible-field{
 @media (max-width: 480px) {
     body {
         margin: 0;
-        padding: 10px;
-        height: 100%;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: cover;
     }
     .container {
-        width: 88vw;
-        max-width: 98vw;
-        min-width: unset;
-        padding: 10px;
-    }
-    .checkbox {
-        width: 18px;
-        height: 18px;
+        width: 50%;
+        max-width: 50%;
+        min-width: 120px;
+        height: 100%;
+        max-height: 160px;
+        margin: 32px auto 0 auto;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.15);
+        font-size: 5px;
     }
     #theme-change {
-        width: 40px;
+        width: 50px;
         height: 20px;
-        font-size: 12px;
+        font-size: 7px;
+        position: absolute;
+        margin-top: -4px;
+    }
+    .ms-and-logo-div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        margin-top: 6px;
     }
     .microsoft-p {
-        font-size: 18px;
+        font-size: 9px;
+        text-align: center;
+        margin-bottom: 16px;
+        margin-right: 20px;
     }
     .sign-in {
-        font-size: 14px;
+        font-size: 10px;
+    }
+    label{
+        color: gray;
+        font-size: 7px;
+    }
+    font{
+        font-size: 7px;
+    }
+    small{
+        font-size: 7px;
     }
     img {
-        width: 15vw;
-        height: 6vh;
+        width: 11vw;
+        height: 4vh;
+        margin-left: 39px;
+        margin-bottom: 10px;
     }
     .by {
         margin-left: 0;
-        font-size: 12px;
+        font-size: 5px;
+        text-align: center;
     }
     .last-part {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
+        gap: 0px;
     }
     #forgot-password {
         margin-left: 0;
-        float: none;
+        float: right;
         display: block;
-        text-align: right;
+        font-size: 7px;
+        margin-left: 20px;
     }
-    #next-btn {
+    #next-btn, #login-btn {
         width: 100%;
-        padding: 10px 0;
-        font-size: 13px;
-        margin-top: 15px;
-        float: none;
-        display: block;
+        max-width: 40px;
+        float: right;
+        padding: 4px 0;
+        font-size: 6px;
+        margin-top: 5px;
         box-sizing: border-box;
     }
-    #login-btn {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 13px;
-        margin-top: 15px;
-        float: none;
-        display: block;
-        box-sizing: border-box;
+    #visible-field {
+        padding: 6px;
+        width: 90%;
+        height: 4px;
+        border: none;
+        background: transparent;
+    }
+    .checkbox{
+        width: 9px;
+        height: 9px;
+    }
+    a{
+        font-size: 5px;
     }
 }
